@@ -1,0 +1,1 @@
+INSERT INTO system_properties VALUES ('scheduler.cron', '0 0/2 * * * ?');

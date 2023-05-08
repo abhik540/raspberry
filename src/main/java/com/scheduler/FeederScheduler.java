@@ -21,13 +21,11 @@ public class FeederScheduler {
     private final SystemPropertiesRepository systemPropertiesRepository;
     private static GpioPinDigitalOutput gpioPinDigitalOutput_02 = null;
 
-    final GpioController gpio = GpioFactory.getInstance();
-
     @Scheduled(cron = "#{@schedulerFeederCron}")
     public void run() throws InterruptedException {
         System.out.println("Running feeder scheduler...." + new Date());
         if (gpioPinDigitalOutput_02 == null) {
-            gpioPinDigitalOutput_02 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02);
+            gpioPinDigitalOutput_02 = GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_02);
         }
         gpioPinDigitalOutput_02.low();
         TimeUnit.MILLISECONDS.sleep(150);

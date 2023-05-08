@@ -21,13 +21,11 @@ public class LightScheduler {
     private final SystemPropertiesRepository systemPropertiesRepository;
     private static GpioPinDigitalOutput gpioPinDigitalOutput_01 = null;
 
-    final GpioController gpio = GpioFactory.getInstance();
-
     @Scheduled(cron = "#{@schedulerLightCron}")
     public void run() throws InterruptedException {
         System.out.println("Running light scheduler...." + new Date());
         if (gpioPinDigitalOutput_01 == null) {
-            gpioPinDigitalOutput_01 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+            gpioPinDigitalOutput_01 = GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_01);
         }
         gpioPinDigitalOutput_01.low();
         TimeUnit.MILLISECONDS.sleep(150);

@@ -13,16 +13,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
-@Entity(name = "system_properties")
 @Table(name = "system_properties")
+@Entity
 @Getter
 @Setter
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SystemProperties {
+public class SystemProperties implements Serializable {
     private static final long serialVersionUID = 213412343214L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

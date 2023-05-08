@@ -1,1 +1,2 @@
-INSERT INTO system_properties VALUES ('scheduler.cron', '0 0/2 * * * ?');
+INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder.cron', '0 0 7,15,23 * * *');
+INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.light.cron', '0 0 20,6 * * *');

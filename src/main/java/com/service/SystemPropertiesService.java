@@ -16,6 +16,9 @@ public class SystemPropertiesService {
     private final SystemPropertiesRepository systemPropertiesRepository;
 
     public List<SystemProperties> findAll() {
-        return  systemPropertiesRepository.getAll();
+        return systemPropertiesRepository.findAll();
+    }
+    public SystemProperties findByKey(String key) {
+        return systemPropertiesRepository.findByKey(key);
     }
 }

@@ -20,7 +20,7 @@ public class LightScheduler {
     private static GpioPinDigitalOutput gpioPinDigitalOutput_01 = null;
 
     @Scheduled(cron = "#{@schedulerLightCron}")
-    public void run() throws InterruptedException {
+    public void run() {
         try {
             System.out.println("Running light scheduler...." + new Date());
             if (gpioPinDigitalOutput_01 == null) {

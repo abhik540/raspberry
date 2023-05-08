@@ -20,7 +20,7 @@ public class FeederScheduler {
     private static GpioPinDigitalOutput gpioPinDigitalOutput_02 = null;
 
     @Scheduled(cron = "#{@schedulerFeederCron}")
-    public void run() throws InterruptedException {
+    public void run() {
         try {
             System.out.println("Running feeder scheduler...." + new Date());
             if (gpioPinDigitalOutput_02 == null) {

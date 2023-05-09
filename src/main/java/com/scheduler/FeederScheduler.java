@@ -41,14 +41,14 @@ public class FeederScheduler {
                     .systemValue(new Date().toString())
                     .build());
             try {
-                final Message message = EmailUtils.buildMessage(session, "Feeder ON", new Date().toString());
+                final Message message = EmailUtils.buildMessage(session, "Feeder ON", new Date().toString(), "sujan.maharjan.2015@gmail.com");
                 Transport.send(message);
             } catch (MessagingException me) {
                 System.out.println(me.getLocalizedMessage());
             }
         } catch (Exception e) {
             try {
-                final Message message = EmailUtils.buildMessage(session, "Feeder Failure", e.getLocalizedMessage());
+                final Message message = EmailUtils.buildMessage(session, "Feeder Failure", e.getLocalizedMessage(), "sujan.maharjan.2015@gmail.com");
                 Transport.send(message);
             } catch (MessagingException me) {
                 System.out.println(me.getLocalizedMessage());

@@ -20,4 +20,9 @@ public class InitBean {
     public String getSchedulerLightCron() {
         return systemPropertiesService.findByKey("scheduler.light.cron").getSystemValue();
     }
+
+    @Bean(name = "schedulerEmailCron")
+    public String getSchedulerEmailCron() {
+        return systemPropertiesService.findByKey("scheduler.email.cron").getSystemValue();
+    }
 }

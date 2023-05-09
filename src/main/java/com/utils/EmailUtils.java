@@ -54,12 +54,12 @@ public class EmailUtils {
                 });
     }
 
-    public static Message buildMessage(Session session, String subject, String messageText) throws MessagingException {
+    public static Message buildMessage(Session session, String subject, String messageText, String emailTo) throws MessagingException {
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress("from@gmail.com"));
         message.setRecipients(
                 Message.RecipientType.TO,
-                InternetAddress.parse("sujan.maharjan.2015@gmail.com")
+                InternetAddress.parse(emailTo)
         );
         message.setSubject(subject);
         message.setText(messageText);

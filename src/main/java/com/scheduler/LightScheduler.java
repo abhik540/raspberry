@@ -22,13 +22,16 @@ import java.util.concurrent.TimeUnit;
 public class LightScheduler {
 
     private final SystemPropertiesRepository systemPropertiesRepository;
-    private final GpioPinDigitalOutput gpioPinDigitalOutput_01;
+    private GpioPinDigitalOutput gpioPinDigitalOutput_01 = null;
 
     @Scheduled(cron = "#{@schedulerLightCron}")
     public void run() {
         final Session session = EmailUtils.getSession();
         try {
             System.out.println("Running light scheduler...." + new Date());
+            if (gpioPinDigitalOutput_01 == null) {
+                gpioPinDigitalOutput_01 = GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_01);
+            }
             gpioPinDigitalOutput_01.low();
             TimeUnit.MILLISECONDS.sleep(150);
             gpioPinDigitalOutput_01.high();
@@ -55,5 +58,6 @@ public class LightScheduler {
                     .systemValue(new Date().toString())
                     .build());
         }
+
     }
 }

@@ -22,8 +22,8 @@ public class RelayController {
     private static String ON_OFF = "onoff";
 
     private static GpioPinDigitalOutput gpioPinDigitalOutput = null;
-    private final GpioPinDigitalOutput gpioPinDigitalOutput_01;
-    private final GpioPinDigitalOutput gpioPinDigitalOutput_02;
+    private static GpioPinDigitalOutput gpioPinDigitalOutput_01 = null;
+    private static GpioPinDigitalOutput gpioPinDigitalOutput_02 = null;
     private static GpioPinDigitalOutput gpioPinDigitalOutput_03 = null;
     private static GpioPinDigitalOutput gpioPinDigitalOutput_04 = null;
     private static GpioPinDigitalOutput gpioPinDigitalOutput_05 = null;
@@ -52,10 +52,16 @@ public class RelayController {
         String pinState;
         switch (gpioNumber) {
             case 1:
+                if (gpioPinDigitalOutput_01 == null) {
+                    gpioPinDigitalOutput_01 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+                }
                 setState(state, gpioPinDigitalOutput_01);
                 pinState = gpioPinDigitalOutput_01.getState().getName();
                 break;
             case 2:
+                if (gpioPinDigitalOutput_02 == null) {
+                    gpioPinDigitalOutput_02 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02);
+                }
                 setState(state, gpioPinDigitalOutput_02);
                 pinState = gpioPinDigitalOutput_02.getState().getName();
                 break;

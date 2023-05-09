@@ -1,7 +1,9 @@
 package com.scheduler;
 
 import com.model.SystemProperties;
+import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.RaspiPin;
 import com.repository.SystemPropertiesRepository;
 import com.utils.EmailUtils;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +22,16 @@ import java.util.concurrent.TimeUnit;
 public class FeederScheduler {
 
     private final SystemPropertiesRepository systemPropertiesRepository;
-    private final GpioPinDigitalOutput gpioPinDigitalOutput_02;
+    private GpioPinDigitalOutput gpioPinDigitalOutput_02 = null;
 
     @Scheduled(cron = "#{@schedulerFeederCron}")
     public void run() {
         final Session session = EmailUtils.getSession();
         try {
             System.out.println("Running feeder scheduler...." + new Date());
+            if (gpioPinDigitalOutput_02 == null) {
+                gpioPinDigitalOutput_02 = GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_02);
+            }
             gpioPinDigitalOutput_02.low();
             TimeUnit.MILLISECONDS.sleep(150);
             gpioPinDigitalOutput_02.high();

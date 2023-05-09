@@ -61,7 +61,7 @@ public class FeederScheduler {
                     .build());
         } finally {
             gpio.shutdown();
-            gpio.unprovisionPin(gpioPinDigitalOutput_02);
+            // gpio.unprovisionPin(gpioPinDigitalOutput_02);
         }
     }
 }

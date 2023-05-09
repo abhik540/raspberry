@@ -1,6 +1,7 @@
 package com.scheduler;
 
 import com.model.SystemProperties;
+import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
@@ -27,10 +28,11 @@ public class FeederScheduler {
     @Scheduled(cron = "#{@schedulerFeederCron}")
     public void run() {
         final Session session = EmailUtils.getSession();
+        final GpioController gpio = GpioFactory.getInstance();
         try {
             System.out.println("Running feeder scheduler...." + new Date());
             if (gpioPinDigitalOutput_02 == null) {
-                gpioPinDigitalOutput_02 = GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_02);
+                gpioPinDigitalOutput_02 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02);
             }
             gpioPinDigitalOutput_02.low();
             TimeUnit.MILLISECONDS.sleep(150);
@@ -57,6 +59,9 @@ public class FeederScheduler {
                     .systemKey("feeder-error")
                     .systemValue(new Date().toString())
                     .build());
+        } finally {
+            gpio.shutdown();
+            gpio.unprovisionPin(gpioPinDigitalOutput_02);
         }
     }
 }

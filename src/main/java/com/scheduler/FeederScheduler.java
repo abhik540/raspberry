@@ -27,6 +27,12 @@ public class FeederScheduler {
 
     @Scheduled(cron = "#{@schedulerFeederCron}")
     public void run() {
+        String enable = systemPropertiesRepository.findByKey("scheduler.feeder").getSystemValue();
+
+        if (!"TRUE".equalsIgnoreCase(enable)) {
+            return;
+        }
+
         final Session session = EmailUtils.getSession();
         final GpioController gpio = GpioFactory.getInstance();
         try {
@@ -61,7 +67,11 @@ public class FeederScheduler {
                     .build());
         } finally {
             gpio.shutdown();
-            // gpio.unprovisionPin(gpioPinDigitalOutput_02);
+        }
+        try {
+            gpio.unprovisionPin(gpioPinDigitalOutput_02);
+        } catch (Exception e) {
+
         }
     }
 }

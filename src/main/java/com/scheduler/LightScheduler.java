@@ -61,7 +61,11 @@ public class LightScheduler {
                     .build());
         } finally {
             gpio.shutdown();
-            // gpio.unprovisionPin(gpioPinDigitalOutput_01);
+        }
+        try {
+            gpio.unprovisionPin(gpioPinDigitalOutput_01);
+        } catch (Exception e) {
+
         }
 
     }

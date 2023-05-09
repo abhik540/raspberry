@@ -58,7 +58,11 @@ public class RelayController {
                 setState(state, gpioPinDigitalOutput_01);
                 pinState = gpioPinDigitalOutput_01.getState().getName();
                 gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_01);
+                try {
+                    gpio.unprovisionPin(gpioPinDigitalOutput_01);
+                } catch (Exception e) {
+
+                }
                 break;
             case 2:
                 if (gpioPinDigitalOutput_02 == null) {
@@ -67,7 +71,11 @@ public class RelayController {
                 setState(state, gpioPinDigitalOutput_02);
                 pinState = gpioPinDigitalOutput_02.getState().getName();
                 gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_02);
+                try {
+                    gpio.unprovisionPin(gpioPinDigitalOutput_02);
+                } catch (Exception e) {
+
+                }
                 break;
             case 3:
                 if (gpioPinDigitalOutput_03 == null) {
@@ -75,8 +83,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_03);
                 pinState = gpioPinDigitalOutput_03.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_03);
                 break;
             case 4:
                 if (gpioPinDigitalOutput_04 == null) {
@@ -84,8 +90,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_04);
                 pinState = gpioPinDigitalOutput_04.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_04);
                 break;
             case 5:
                 if (gpioPinDigitalOutput_05 == null) {
@@ -93,8 +97,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_05);
                 pinState = gpioPinDigitalOutput_05.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_05);
                 break;
             case 6:
                 if (gpioPinDigitalOutput_06 == null) {
@@ -102,8 +104,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_06);
                 pinState = gpioPinDigitalOutput_06.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_06);
                 break;
             case 7:
                 if (gpioPinDigitalOutput_07 == null) {
@@ -111,8 +111,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_07);
                 pinState = gpioPinDigitalOutput_07.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_07);
                 break;
             case 8:
                 if (gpioPinDigitalOutput_08 == null) {
@@ -120,8 +118,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_08);
                 pinState = gpioPinDigitalOutput_08.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_08);
                 break;
             case 9:
                 if (gpioPinDigitalOutput_09 == null) {
@@ -129,8 +125,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_09);
                 pinState = gpioPinDigitalOutput_09.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_09);
                 break;
             case 10:
                 if (gpioPinDigitalOutput_10 == null) {
@@ -138,8 +132,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_10);
                 pinState = gpioPinDigitalOutput_10.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_10);
                 break;
             case 11:
                 if (gpioPinDigitalOutput_11 == null) {
@@ -147,8 +139,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_11);
                 pinState = gpioPinDigitalOutput_11.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_11);
                 break;
             case 12:
                 if (gpioPinDigitalOutput_12 == null) {
@@ -156,8 +146,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_12);
                 pinState = gpioPinDigitalOutput_12.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_12);
                 break;
             case 13:
                 if (gpioPinDigitalOutput_13 == null) {
@@ -165,8 +153,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_13);
                 pinState = gpioPinDigitalOutput_13.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_13);
                 break;
             case 14:
                 if (gpioPinDigitalOutput_14 == null) {
@@ -174,8 +160,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_14);
                 pinState = gpioPinDigitalOutput_14.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_14);
                 break;
             case 15:
                 if (gpioPinDigitalOutput_15 == null) {
@@ -183,8 +167,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_15);
                 pinState = gpioPinDigitalOutput_15.getState().getName();
-                gpio.shutdown();
-                gpio.unprovisionPin(gpioPinDigitalOutput_15);
                 break;
             case 16:
                 if (gpioPinDigitalOutput_16 == null) {
@@ -192,8 +174,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_16);
                 pinState = gpioPinDigitalOutput_16.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_16);
                 break;
             case 17:
                 if (gpioPinDigitalOutput_17 == null) {
@@ -201,8 +181,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_17);
                 pinState = gpioPinDigitalOutput_17.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_17);
                 break;
             case 18:
                 if (gpioPinDigitalOutput_18 == null) {
@@ -210,8 +188,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_18);
                 pinState = gpioPinDigitalOutput_18.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_18);
                 break;
             case 19:
                 if (gpioPinDigitalOutput_19 == null) {
@@ -219,8 +195,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_19);
                 pinState = gpioPinDigitalOutput_19.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_19);
                 break;
             case 20:
                 if (gpioPinDigitalOutput_20 == null) {
@@ -228,8 +202,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_20);
                 pinState = gpioPinDigitalOutput_20.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_20);
                 break;
             case 21:
                 if (gpioPinDigitalOutput_21 == null) {
@@ -237,8 +209,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput_21);
                 pinState = gpioPinDigitalOutput_21.getState().getName();
-                gpio.shutdown();
-                // gpio.unprovisionPin(gpioPinDigitalOutput_21);
                 break;
             default:
                 if (gpioPinDigitalOutput == null) {
@@ -246,7 +216,6 @@ public class RelayController {
                 }
                 setState(state, gpioPinDigitalOutput);
                 pinState = gpioPinDigitalOutput.getState().getName();
-                gpio.shutdown();
                 break;
         }
 

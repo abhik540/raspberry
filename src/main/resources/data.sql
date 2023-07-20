@@ -1,7 +1,7 @@
-INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder.cron', '0 0 5,13 * * *');
-INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.light.cron', '0 0 7,20 * * *');
+INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder.cron', '0 0 5,6,13,14,21,22 * * *');
+INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.light.cron', '0 0 6,20 * * *');
 INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.email.cron', '0 0 0 9,10,11,12 6,7,8 ?');
 INSERT INTO system_properties (system_key, system_value) VALUES ('email.to', 'thesujan540@gmail.com,buzzsuman@gmail.com,seerjana9@hotmail.com,clamaharjan@gmail.com');
 INSERT INTO system_properties (system_key, system_value) VALUES ('message', 'Suman, mero sabai account details haru maile mero laptop ma rakheko chu.. find a document `personal_info.pdt` in black lenovo laptop and it is in kitchen island username: sujan540  password: sujan@123 maile key mero sathi manoj lai deko chu his number is +1319-217-6156 or you can access your self garage code: 7426 and door key is under small car civic front tire and car is inside birgeko microoven in same garage, move car you will see door key to open. plus you can access all my bank information in old iphone which is drawer under acqurium');
-INSERT INTO system_properties (system_key, system_value) VALUES ('subject', 'Sujan Email');
+INSERT INTO system_properties (system_key, system_value) VALUES ('subject', '');
 INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder', 'TRUE');

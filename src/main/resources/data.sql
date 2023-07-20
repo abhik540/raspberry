@@ -1,4 +1,4 @@
-INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder.cron', '0 0 5,6,13,14,21,22 * * *');
+INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.feeder.cron', '0 0/30 5,13,21 * * *');
 INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.light.cron', '0 0 6,20 * * *');
 INSERT INTO system_properties (system_key, system_value) VALUES ('scheduler.email.cron', '0 0 0 9,10,11,12 6,7,8 ?');
 INSERT INTO system_properties (system_key, system_value) VALUES ('email.to', 'thesujan540@gmail.com,buzzsuman@gmail.com,seerjana9@hotmail.com,clamaharjan@gmail.com');
